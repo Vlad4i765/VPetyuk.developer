@@ -1,0 +1,421 @@
+@import 'tailwindcss';
+
+/* Additional styles */
+@import './additional-styles/utility-patterns.css' layer(components);
+@import './additional-styles/theme.css';
+
+@plugin "@tailwindcss/forms" {
+  strategy: base;
+}
+
+@theme {
+  --font-inter: Inter, sans-serif;
+  --font-mono: Roboto Mono, monospace;
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5715;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
+  --text-base--letter-spacing: -0.017em;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.5;
+  --text-lg--letter-spacing: -0.017em;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5;
+  --text-xl--letter-spacing: -0.017em;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.415;
+  --text-2xl--letter-spacing: -0.037em;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 1.3333;
+  --text-3xl--letter-spacing: -0.037em;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 1.2777;
+  --text-4xl--letter-spacing: -0.037em;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
+  --text-5xl--letter-spacing: -0.037em;
+  --text-6xl: 4rem;
+  --text-6xl--line-height: 1;
+  --text-6xl--letter-spacing: -0.037em;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-7xl--letter-spacing: -0.037em;
+
+  --animate-code-1: code-1;
+  --animate-code-2: code-2;
+  --animate-code-3: code-3;
+  --animate-code-4: code-4;
+  --animate-code-5: code-5;
+  --animate-code-6: code-6;
+  --animate-breath: breath;
+  --animate-float: float;
+  --animate-line: line;
+  --animate-infinite-scroll: infinite-scroll;  
+
+  @keyframes code-1 {
+    0% {
+      opacity: 0;
+    }
+    2.5% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes code-2 {
+    16.2% {
+      opacity: 0;
+    }
+    18.75% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes code-3 {
+    32.5% {
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes code-4 {
+    48.75% {
+      opacity: 0;
+    }
+    51.25% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes code-5 {
+    65% {
+      opacity: 0;
+    }
+    72.5% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes code-6 {
+    81.25% {
+      opacity: 0;
+    }
+    83.75% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes breath {
+    0%,
+    100% {
+      transform: scale(0.95);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5%);
+    }
+  }
+  @keyframes line {
+    0%,
+    100% {
+      left: 0;
+      opacity: 0;
+    }
+    50% {
+      left: 100%;
+      transform: translateX(-100%);
+    }
+    10%,
+    40%,
+    60%,
+    90% {
+      opacity: 0;
+    }
+    25%,
+    75% {
+      opacity: 1;
+    }
+  }
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+.header {
+  position: fixed;
+  z-index: 50;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 0 8px;
+  top: 0;
+}
+
+.headerInner {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 80rem;
+  border: 1px solid #d1b3fa;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 40px rgba(80, 51, 172, 0.11);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  transition: box-shadow 0.2s;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logoImg {
+  width: 48px;
+  height: 48px;
+  transition: width 0.3s, height 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .logoImg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.logoText {
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+  transition: color 0.3s;
+}
+
+.logoTextPurple {
+  color: #a78bfa;
+}
+
+.logoLink:hover .logoText {
+  color: #a855f7;
+}
+
+.logoLink:hover .logoTextPurple {
+  color: #c4b5fd;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.desktopSocials {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .desktopSocials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+  }
+}
+
+.navLink {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+  font-size: 1rem;
+}
+
+.navLink:hover {
+  color: #a855f7;
+  background: #f3e8ff;
+}
+
+.socialLink {
+  font-size: 22px;
+  padding: 8px;
+  color: #6b7280;
+  transition: color 0.18s;
+  line-height: 0;
+}
+
+.socialLink:hover {
+  color: #a855f7;
+}
+
+.btnMenu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  transition: background 0.18s;
+  cursor: pointer;
+}
+
+.btnMenu:hover {
+  background: #e5e7eb;
+}
+
+@media (min-width: 1024px) {
+  .btnMenu {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.menuDropdownOuter {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+}
+
+.menuDropdown {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d1b3fa;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 40px rgba(80, 51, 172, 0.13);
+  backdrop-filter: blur(10px);
+  margin-top: 16px;
+  padding: 22px 8px 12px 8px;
+  max-width: 320px;
+  width: 96vw;
+  animation: fadeInY 0.33s;
+}
+
+@keyframes fadeInY {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.menuNavLink {
+  display: block;
+  padding: 9px 26px;
+  border-radius: 13px;
+  color: #23272f;
+  background: transparent;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.16s, color 0.16s;
+}
+
+.menuNavLink:hover {
+  color: #a855f7;
+  background: #f3e8ff;
+}
+
+.menuSocials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.menuSocialLink {
+  font-size: 22px;
+  color: #6b7280;
+  line-height: 0;
+  transition: color 0.2s;
+}
+
+.menuSocialLink:hover {
+  color: #a78bfa;
+}
