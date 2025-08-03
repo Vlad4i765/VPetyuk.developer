@@ -124,7 +124,7 @@ export default function Header() {
               <li className="menuSocials">
                 <a href="https://t.me/vunpun" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="menuSocialLink" style={{ color: "#6b7280" }}><FaTelegramPlane /></a>
                 <a href="https://www.instagram.com/midmooder?igsh=cDE0MGRqb3R6OGwz&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="menuSocialLink" style={{ color: "#6b7280" }}><FaInstagram /></a>
-                <a href="htthttps://vk.com/fisifruxxydud" target="_blank" rel="noopener noreferrer" aria-label="VK" className="menuSocialLink" style={{ color: "#6b7280" }}><FaVk /></a>
+                <a href="https://vk.com/fisifruxxydud" target="_blank" rel="noopener noreferrer" aria-label="VK" className="menuSocialLink" style={{ color: "#6b7280" }}><FaVk /></a>
               </li>
             </ul>
           </nav>
