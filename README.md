@@ -75,7 +75,7 @@
 ## Запуск проекта локально
 
 ```bash
-git clone https://github.com/Vlad4i765/my-visiting-card-website.git
+git clone https://github.com/Vlad4i765/VPetyuk.developer.git
 cd my-visiting-card-website
 npm install
 npm run dev
