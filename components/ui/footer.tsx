@@ -1,7 +1,7 @@
 "use client";
 
-import { FaTelegramPlane, FaLinkedinIn, FaInstagram, FaVk } from "react-icons/fa";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
+import { FaTelegramPlane, FaInstagram, FaVk, FaPlay } from "react-icons/fa";
 
 const navigation = [
   { name: "Домой", href: "#home" },
@@ -9,30 +9,37 @@ const navigation = [
   { name: "Навыки", href: "#skills" },
   { name: "Проекты", href: "#projects" },
   { name: "FAQ", href: "#faq" },
-  { name: "Связь", href: "#contact" },
   { name: "Блог", href: "#news" },
   { name: "Подвал", href: "#footer" },
 ];
 
 export default function Footer() {
-const handleNavClick = useCallback(
-  (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href === "#home") {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    if (href.startsWith("#")) {
-      const id = href.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      if (href === "#home") {
         e.preventDefault();
-        el.scrollIntoView({ behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
       }
-    }
-  },
-  []
-);
+      if (href.startsWith("#")) {
+        const id = href.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    },
+    []
+  );
+
+  // Состояние для "показа" видео на мобильном
+  const [mobileVideoActive, setMobileVideoActive] = useState(false);
+
+  // Функция-обработчик: активировать видео на мобильных
+  const handleVideoClick = useCallback(() => {
+    if (window.innerWidth < 768) setMobileVideoActive(true);
+  }, []);
 
   return (
     <footer id="footer" className="border-t border-neutral-200 text-neutral-800">
@@ -71,26 +78,17 @@ const handleNavClick = useCallback(
             </li>
             <li>
               <a
-                href="https://t.me/voonpoon"
+                href="https://t.me/vunpun"
                 className="transition hover:text-white inline-flex items-center gap-1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaTelegramPlane /> @voonpoon
+                <FaTelegramPlane /> @vunpun
               </a>
             </li>
             <li className="flex gap-4 mt-2">
               <a
-                href="https://linkedin.com/in/your-linkedin"
-                aria-label="LinkedIn"
-                className="transition text-lg hover:text-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-              <a
-                href="https://instagram.com/your-instagram"
+                href="https://www.instagram.com/midmooder?igsh=cDE0MGRqb3R6OGwz&utm_source=qr"
                 aria-label="Instagram"
                 className="transition text-lg hover:text-white"
                 target="_blank"
@@ -99,7 +97,7 @@ const handleNavClick = useCallback(
                 <FaInstagram />
               </a>
               <a
-                href="https://vk.com/your-vk"
+                href="https://vk.com/fisifruxxydud"
                 aria-label="VK"
                 className="transition text-lg hover:text-white"
                 target="_blank"
@@ -120,40 +118,54 @@ const handleNavClick = useCallback(
           </div>
         </div>
 
-        {/* Пасхалка: Видео с красивым оформлением для мобильных */}
+        {/* Пасхалка: Видео для мобильных и десктопа */}
         <div className="w-full md:w-1/5 flex justify-center items-center">
-  <div className="w-full flex flex-col items-center group">
-    <video
-      src="/videos/easter-egg.mp4"
-      poster="/images/video-poster.png"
-      className="
-        w-full
-        max-w-[180px]
-        aspect-square
-        rounded-2xl
-        object-cover
-        filter blur-md
-        group-hover:blur-none
-        transition
-        duration-500
-        pointer-events-none
-      "
-      autoPlay
-      loop
-      muted
-      playsInline
-    />
-    <p
-      className="
-        text-xs mt-2 text-center text-blue-500 font-medium 
-        hidden group-hover:block
-        transition duration-300
-      "
-    >
-      Пасхалка для внимательных :)
-    </p>
-  </div>
-</div>      </div>
+          <div className="w-full flex flex-col items-center group">
+            <div
+              className="
+                relative w-full max-w-[180px] aspect-square rounded-2xl overflow-hidden
+                flex justify-center items-center
+                cursor-pointer
+                group
+              "
+              // обработчик только на мобильных
+              onClick={handleVideoClick}
+            >
+              <video
+                src="/videos/easter-egg.mp4"
+                poster="/images/video-poster.png"
+                className={`
+                  w-full h-full object-cover rounded-2xl
+                  transition duration-500
+                  ${mobileVideoActive ? "" : "blur-md pointer-events-none"}
+                  md:group-hover:blur-none md:group-hover:pointer-events-auto
+                `}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+              {/* Для мобильных: затемнение и "play", если видео не активно */}
+              {!mobileVideoActive && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center md:hidden bg-black/40 transition">
+                  <FaPlay className="w-12 h-12 text-white opacity-80 mb-2" />
+                  <span className="text-white text-xs">Нажмите для просмотра</span>
+                </div>
+              )}
+            </div>
+            <p
+              className={`
+                text-xs mt-2 text-center text-blue-500 font-medium
+                transition duration-300
+                ${mobileVideoActive ? "block" : ""}
+                hidden md:group-hover:block
+              `}
+            >
+              Пасхалка для внимательных :)
+            </p>
+          </div>
+        </div>
+      </div>
       {/* Копирайт */}
       <div className="text-center py-4 border-t border-neutral-200 text-white text-sm ">
         &copy; {new Date().getFullYear()} Владислав Валентинович Петюк. Все права защищены.

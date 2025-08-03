@@ -6,7 +6,7 @@ import { FaTelegramPlane, FaEnvelope, FaLinkedin, FaInstagram, FaVk, FaDownload 
 const socials = [
   {
     name: "Telegram",
-    href: "https://t.me/voonpoon",
+    href: "https://t.me/vunpun",
     icon: <FaTelegramPlane className="text-cyan-600" />,
   },
   {
@@ -14,19 +14,14 @@ const socials = [
     href: "mailto:vlad.petyuk@icloud.com",
     icon: <FaEnvelope className="text-orange-400" />,
   },
-  {
-    name: "LinkedIn",
-    href: "#", // Укажи свою личную ссылку!
-    icon: <FaLinkedin className="text-blue-700" />,
-  },
-  {
+    {
     name: "Instagram",
-    href: "#", // Укажи свою личную ссылку!
+    href: "https://www.instagram.com/midmooder?igsh=cDE0MGRqb3R6OGwz&utm_source=qr", // Укажи свою личную ссылку!
     icon: <FaInstagram className="text-pink-500" />,
   },
   {
     name: "VK",
-    href: "#", // Укажи свою личную ссылку!
+    href: "https://vk.com/fisifruxxydud", // Укажи свою личную ссылку!
     icon: <FaVk className="text-blue-500" />,
   },
 ];

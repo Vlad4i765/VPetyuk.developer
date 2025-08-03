@@ -52,7 +52,7 @@ const projects: Project[] = [
       "/images/projects/baby2.png",
       "/images/projects/baby3.png",
     ],
-    github: "https://github.com/yourusername/baby-game",
+    github: "https://github.com/Vlad4i765/BABY-game.git",
   },
   {
     title: "Адаптивный лендинг визитка",
@@ -70,7 +70,7 @@ const projects: Project[] = [
             "/images/projects/landing3.png",
 
     ],
-    github: "https://github.com/yourusername/portfolio-landing",
+    github: "https://github.com/Vlad4i765/VPetyuk.developer.git",
   },
   {
     title: "AurumMultum — Веб-аукцион",
@@ -87,14 +87,14 @@ const projects: Project[] = [
             "/images/projects/aurummultum3.png",
 
     ],
-    github: "https://github.com/yourusername/aurummultum",
+    github: "https://github.com/Vlad4i765/aurummultum.git",
   },
   
  {
     title: "Приложение Аукцион",
     subtitle: "Курсовой проект",
     description:
-      "Веб-приложение онлайн-аукциона. Реализация на связке Python + Django и вёрстка на современном CSS.",
+      "Десктоп-приложение аукциона. Реализация на связке C# + MySQL и вёрстка на современном HTML, CSS.",
     result: "Оценка: 7/10",
     review:
       "Проект выполнен в срок, все основные требования реализованы, отмечена хорошая командная работа.",
@@ -105,7 +105,7 @@ const projects: Project[] = [
       "/images/projects/auction-app2.png",
       "/images/projects/auction-app3.png"
     ],
-    github: "https://github.com/yourusername/auction-app",
+    github: "https://github.com/Vlad4i765/auction_app.gitp",
   },
 ];
 

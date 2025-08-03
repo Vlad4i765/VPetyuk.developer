@@ -30,7 +30,7 @@ const posts = [
     tags: ["поиск работы", "советы", "frontend"],
     readingTime: "5 мин",
     cover: "/images/blog/job-search.jpeg",
-    url: "#",
+    url: "https://www.reddit.com/user/NationalPop1102/submitted/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
   },
   {
     title: "Как собрать портфолио на Next.js и TailwindCSS — свежие подходы",
@@ -40,7 +40,7 @@ const posts = [
     tags: ["портфолио", "next.js", "tailwind"],
     readingTime: "4 мин",
     cover: "/images/blog/portfolio-next.jpeg",
-    url: "#",
+    url: "https://www.reddit.com/user/NationalPop1102/submitted/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
   },
   {
     title: "Первые ошибки в больших пет-проектах и как их избежать",
@@ -50,7 +50,7 @@ const posts = [
     tags: ["pet-проекты", "ошибки", "junior"],
     readingTime: "6 мин",
     cover: "/images/blog/pet-mistakes.jpeg",
-    url: "#",
+    url: "https://www.reddit.com/user/NationalPop1102/submitted/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
   },
 ];
 

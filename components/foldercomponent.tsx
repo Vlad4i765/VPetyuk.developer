@@ -4,11 +4,10 @@ import { useState } from "react";
 import { FaTelegramPlane, FaEnvelope, FaLinkedin, FaInstagram, FaVk, FaDownload, FaTimes, FaComments } from "react-icons/fa";
 
 const socials = [
-  { name: "Telegram", href: "https://t.me/voonpoon", icon: <FaTelegramPlane className="text-cyan-300 text-xl" /> },
+  { name: "Telegram", href: "https://t.me/vunpun", icon: <FaTelegramPlane className="text-cyan-300 text-xl" /> },
   { name: "Email", href: "mailto:vlad.petyuk@icloud.com", icon: <FaEnvelope className="text-orange-200 text-xl" /> },
-  { name: "LinkedIn", href: "#", icon: <FaLinkedin className="text-blue-200 text-xl" /> },
-  { name: "Instagram", href: "#", icon: <FaInstagram className="text-pink-200 text-xl" /> },
-  { name: "VK", href: "#", icon: <FaVk className="text-blue-300 text-xl" /> },
+  { name: "Instagram", href: "https://www.instagram.com/midmooder?igsh=cDE0MGRqb3R6OGwz&utm_source=qr", icon: <FaInstagram className="text-pink-200 text-xl" /> },
+  { name: "VK", href: "https://vk.com/fisifruxxydud", icon: <FaVk className="text-blue-300 text-xl" /> },
 ];
 
 export default function FloatingContact() {

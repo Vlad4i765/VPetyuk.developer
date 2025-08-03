@@ -1,20 +1,28 @@
 "use client";
 
 import { useEffect, useRef, useState, RefObject } from "react";
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaPython } from "react-icons/fa";
-import { SiDjango, SiFigma, Si1Password } from "react-icons/si";
+import {
+  FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaPython,
+} from "react-icons/fa";
+import {
+  SiDjango, SiFigma, Si1Password, SiTypescript, SiTailwindcss,
+} from "react-icons/si";
 
 const skills = [
-  { name: "HTML5", icon: <FaHtml5 className="text-orange-600" />, level: 5 },
-  { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" />, level: 5 },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, level: 4 },
+  { name: "HTML5", icon: <FaHtml5 className="text-orange-600" />, level: 4 },
+  { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" />, level: 4 },
+  { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, level: 3 },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" />, level: 3 }, // Новый скилл
   { name: "React", icon: <FaReact className="text-cyan-400" />, level: 4 },
+  { name: "TailwindCSS", icon: <SiTailwindcss className="text-sky-400" />, level: 2 }, // Новый скилл
   { name: "Python", icon: <FaPython className="text-blue-400" />, level: 3 },
   { name: "Django", icon: <SiDjango className="text-green-800" />, level: 3 },
   { name: "Figma", icon: <SiFigma className="text-pink-500" />, level: 4 },
   { name: "Git", icon: <FaGitAlt className="text-orange-400" />, level: 4 },
-  { name: "1C-Битрикс", icon: <Si1Password className="text-red-400" />, level: 3 },
+  { name: "1C-Битрикс", icon: <Si1Password className="text-red-400" />, level: 2 },
 ];
+
+// services и useInView — не меняются
 
 const services = [
   {
@@ -45,6 +53,7 @@ const services = [
     ],
   },
 ];
+
 function useInView<T extends HTMLElement = HTMLElement>(threshold = 0.3): [RefObject<T | null>, boolean] {
   const [inView, setInView] = useState(false);
   const ref = useRef<T | null>(null);
@@ -114,7 +123,9 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Карточки сервисов / навыков */}
+      {/* ...остальной код — без изменений */}
+      {/* Карточки сервисов и блок качества */}
+
       <div id="services" className="grid gap-6 md:grid-cols-3">
         {services.map((service, i) => (
           <div
@@ -143,7 +154,6 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Блок качества */}
       <div 
         className={`
           mt-10 text-center text-lg text-white font-medium

@@ -4,6 +4,7 @@ import { FaTelegramPlane, FaLinkedin, FaInstagram, FaVk } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const navItems = [
+  { label: "Домой", href: "#home" },
   { label: "Обо мне", href: "#about" },
   { label: "Навыки", href: "#skills" },
   { label: "Проекты", href: "#projects" },
@@ -80,16 +81,13 @@ export default function Header() {
         </nav>
 
         <div className="desktopSocials">
-          <a href="https://t.me/voonpoon" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="socialLink" style={{ color: "#6b7280" }}>
+          <a href="https://t.me/vunpun" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="socialLink" style={{ color: "#6b7280" }}>
             <FaTelegramPlane />
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="socialLink" style={{ color: "#6b7280" }}>
-            <FaLinkedin />
-          </a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="socialLink" style={{ color: "#6b7280" }}>
+          <a href="https://www.instagram.com/midmooder?igsh=cDE0MGRqb3R6OGwz&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="socialLink" style={{ color: "#6b7280" }}>
             <FaInstagram />
           </a>
-          <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="VK" className="socialLink" style={{ color: "#6b7280" }}>
+          <a href="https://vk.com/fisifruxxydud" target="_blank" rel="noopener noreferrer" aria-label="VK" className="socialLink" style={{ color: "#6b7280" }}>
             <FaVk />
           </a>
         </div>
@@ -124,10 +122,9 @@ export default function Header() {
                 </li>
               ))}
               <li className="menuSocials">
-                <a href="https://t.me/voonpoon" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="menuSocialLink" style={{ color: "#6b7280" }}><FaTelegramPlane /></a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="menuSocialLink" style={{ color: "#6b7280" }}><FaLinkedin /></a>
-                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="menuSocialLink" style={{ color: "#6b7280" }}><FaInstagram /></a>
-                <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="VK" className="menuSocialLink" style={{ color: "#6b7280" }}><FaVk /></a>
+                <a href="https://t.me/vunpun" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="menuSocialLink" style={{ color: "#6b7280" }}><FaTelegramPlane /></a>
+                <a href="https://www.instagram.com/midmooder?igsh=cDE0MGRqb3R6OGwz&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="menuSocialLink" style={{ color: "#6b7280" }}><FaInstagram /></a>
+                <a href="htthttps://vk.com/fisifruxxydud" target="_blank" rel="noopener noreferrer" aria-label="VK" className="menuSocialLink" style={{ color: "#6b7280" }}><FaVk /></a>
               </li>
             </ul>
           </nav>
